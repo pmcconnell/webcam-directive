@@ -23,6 +23,7 @@ angular.module('webcam', [])
       transclude: true,
       scope:
       {
+        width: '=',
         onError: '&',
         onStream: '&',
         onStreaming: '&',
@@ -96,7 +97,7 @@ angular.module('webcam', [])
 
         // Default variables
         var isStreaming = false,
-            width = element.width = 320,
+            width = element.width = $scope.width,
             height = element.height = 0;
 
         // Check the availability of getUserMedia across supported browsers
